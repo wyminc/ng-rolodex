@@ -6,7 +6,7 @@ Angular 2+ Exercise
 ## Setup the Server
 
 1. Generate a project using: `ng new ng-rolodex --style=scss`
-1. Change into dir: `cd angular-demo`
+1. Change into dir: `cd ng-rolodex`
 1. Install project deps: `npm i`
 1. Add the `express` and `body-parser` dependency
 1. Add the `knex`, `bookshelf`, `pg`, and `pg-hstore` dependencies
