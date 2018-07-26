@@ -13,7 +13,7 @@ Angular 2+ Exercise
 1. Create a postgres user named `admin` with a password
 1. Create a postgres database named `ng_rolodex` owned by `admin`
 1. Update `knexfile.js`
-1. Create a 3 models, `Users` and `Contacts` _refer to **[schemas](#schemas)**_
+1. Create a 2 models, `Users` and `Contacts` _refer to **[schemas](#schemas)**_
 1. Create the appropriate Bookshelf model files.
 1. Setup an express project in `server.js`
 1. Set up express static middleware configured to serve content from `./public`
@@ -112,7 +112,7 @@ The `/profile` route should show all the user's current information and allows t
 | Property    | Type     | Options          |
 | ----------- | -------- | ---------------- |
 | id (PK)     | number   | not null, unique |
-| name        | string   | not null, unique |
+| name        | string   | not null         |
 | created_at  | TS w/ TZ | not null         |
 | updated_at  | TS w/ TZ | not null         |
 | address     | string   | nullable         |
