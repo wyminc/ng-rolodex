@@ -135,16 +135,16 @@ The `/profile` route should show all the user's current information and allows t
 
 | module source file      | route                          | action                                                                                          |
 | ----------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
-| api/profile/index.js    | GET /api/profile?user=:id      | Respond with current user's profile                                                             |
-| api/profile/index.js    | PUT /api/users                 | Edit current user account information                                                           |
+| api/users/index.js    | GET /api/profile?user=:id      | Respond with current user's profile                                                             |
+| api/users/index.js    | PUT /api/users                 | Edit current user account information                                                           |
+| api/users/auth.js    | POST /api/login                | Logs a user in                                                                                  |
+| api/users/auth.js    | POST /api/logout               | Logs a user out                                                                                 |
+| api/users/auth.js    | POST /api/register             | Registers a new user with the application                                                       |
 | api/contacts/index.js   | GET /api/contacts?user=:id     | Respond with all contacts for the logged in user                                                |
 | api/contacts/index.js   | POST /api/contacts             | Create and respond with a new contact                                                           |
 | api/contacts/index.js   | GET /api/contacts/:id          | Respond with the contact that matches this id                                                   |
 | api/contacts/index.js   | PUT /api/contacts/:id          | Update and respond with the updated contact                                                     |
 | api/contacts/index.js   | DELETE /api/contacts/:id       | Delete the contact that matches the given id, respond with Status 200 OK                        |
-| api/contacts/auth.js    | POST /api/login                | Logs a user in                                                                                  |
-| api/contacts/auth.js    | POST /api/logout               | Logs a user out                                                                                 |
-| api/contacts/auth.js    | POST /api/register             | Registers a new user with the application                                                       |
 
 Please note that the following routes will change once a full authentication system is in place.  
 `GET /api/profile?user=:id` => `GET /api/profile`  
