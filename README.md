@@ -163,3 +163,8 @@ Additionally the body contents of the following route will need to be modified t
 
 - Debounce search input
 - Autofocus inputs between component reloads
+- Separate `/contacts` items alphabetically
+
+## Super Stretch Goals
+
+- Debounce search input using observables
