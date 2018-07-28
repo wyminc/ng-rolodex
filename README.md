@@ -157,3 +157,9 @@ Please note that the following routes will change once a full authentication sys
 Additionally the body contents of the following route will need to be modified to not send the current user's id with the body. This information should be pulled off the session at this point.  
 `PUT /api/users`  
 `POST /api/contacts`  
+
+
+## Stretch Goals
+
+- Debounce search input
+- Autofocus inputs between component reloads
