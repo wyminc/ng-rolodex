@@ -143,6 +143,7 @@ The `/profile` route should show all the user's current information and allows t
 | api/users/auth.js    | POST /api/logout               | Logs a user out                                                                                 |
 | api/users/auth.js    | POST /api/register             | Registers a new user with the application                                                       |
 | api/contacts/index.js   | GET /api/contacts?user=:id     | Respond with all contacts for the logged in user                                                |
+| api/contacts/index.js   | GET /api/contacts/search/:term?user=:id     | Respond with all contacts that match the search term for this user             |
 | api/contacts/index.js   | POST /api/contacts             | Create and respond with a new contact                                                           |
 | api/contacts/index.js   | GET /api/contacts/:id          | Respond with the contact that matches this id                                                   |
 | api/contacts/index.js   | PUT /api/contacts/:id          | Update and respond with the updated contact                                                     |
@@ -151,6 +152,7 @@ The `/profile` route should show all the user's current information and allows t
 Please note that the following routes will change once a full authentication system is in place.  
 `GET /api/profile?user=:id` => `GET /api/profile`  
 `GET /api/contacts?user=:id` => `GET /api/contacts`  
+`GET /api/contacts/search/:term?user=:id` => `GET /api/contacts/search/:term`  
 
 Additionally the body contents of the following route will need to be modified to not send the current user's id with the body. This information should be pulled off the session at this point.  
 `PUT /api/users`  
