@@ -30,6 +30,8 @@ Angular 2+ Exercise
 
 The default view for this application should be a login page that takes in a username (and a password once full authentication is setup). And a "Login" button that allows the username to login with a username. The login page itself should be on the route "/login" but the "/" route should redirect to the login page if the user is not logged in.
 
+The login form should have full validation of all input fields. A successful login should redirect to the home page, while an unsuccessful login, should show the login error on the login page.
+
 
 #### Page header
 
