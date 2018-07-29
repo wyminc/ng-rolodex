@@ -86,13 +86,6 @@ The `/contact/:id` route will show the contact's name at the top along with any 
 The `/profile` route should show all the user's current information and allows the user to edit their own information.
 
 
-## Stretch Goals
-
-1. add supertest
-1. enable real auth
-1. styles
-
-
 ### Schemas
 
 
@@ -164,7 +157,11 @@ Additionally the body contents of the following route will need to be modified t
 - Debounce search input
 - Autofocus inputs between component reloads
 - Separate `/contacts` items alphabetically
+- add supertest
+- enable real auth
+- styles
 
 ## Super Stretch Goals
 
 - Debounce search input using observables
+- Use observables for session handling
