@@ -72,6 +72,11 @@ A user must be `loggedIn` in order to create a new `Contact`.
 When the user is not logged in, the only page that should be available to them is the Login page.
 
 
+#### Login Guard
+
+Create a `login-guard.service.ts` file in `/src/app/services` and implement a `canActivate` method that checks to see if the user is logged in or not. Return true if the user is logged and return false if the user is not. This login-guard should be placed all routes that require a user to be logged in to function properly. The routes needed to be protected are: '/', '/contacts', '/profile', '/contacts/new', and '/contacts/:id'.
+
+
 #### Contacts
 
 The `/contacts` route will list all contacts for this user.
@@ -163,5 +168,6 @@ Additionally the body contents of the following route will need to be modified t
 
 ## Super Stretch Goals
 
-- Debounce search input using observables
 - Use observables for session handling
+- Debounce search input using observables
+
