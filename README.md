@@ -2,6 +2,7 @@
 
 Angular 2+ Exercise
 
+![homepage](.github/home.png?raw=true)
 
 ## Setup the Server
 
