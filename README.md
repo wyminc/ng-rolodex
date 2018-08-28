@@ -150,7 +150,7 @@ The `/profile` route should show all the user's current information and allows t
 
 Please note that the following routes will change once a full authentication system is in place.  
 `GET /api/profile?user=:id` => `GET /api/profile`  
-`PUT /api/users?user=:id` => `PUT /api/users`
+`PUT /api/users?user=:id` => `PUT /api/users`  
 `GET /api/contacts?user=:id` => `GET /api/contacts`  
 `GET /api/contacts/search/:term?user=:id` => `GET /api/contacts/search/:term`  
 
