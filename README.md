@@ -137,7 +137,7 @@ The `/profile` route should show all the user's current information and allows t
 | module source file      | route                          | action                                                                                          |
 | ----------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
 | api/users/index.js    | GET /api/profile?user=:id      | Respond with current user's profile                                                             |
-| api/users/index.js    | PUT /api/users                 | Edit current user account information                                                           |
+| api/users/index.js    | PUT /api/users?user=:id         | Edit current user account information                                                           |
 | api/users/auth.js    | POST /api/login                | Logs a user in                                                                                  |
 | api/users/auth.js    | POST /api/logout               | Logs a user out                                                                                 |
 | api/users/auth.js    | POST /api/register             | Registers a new user with the application                                                       |
@@ -150,6 +150,7 @@ The `/profile` route should show all the user's current information and allows t
 
 Please note that the following routes will change once a full authentication system is in place.  
 `GET /api/profile?user=:id` => `GET /api/profile`  
+`PUT /api/users?user=:id` => `PUT /api/users`
 `GET /api/contacts?user=:id` => `GET /api/contacts`  
 `GET /api/contacts/search/:term?user=:id` => `GET /api/contacts/search/:term`  
 
