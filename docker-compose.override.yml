@@ -5,7 +5,7 @@ services:
     depends_on:
       - pg
       - redis
-    command: ["ng", "serve"]
+    command: ["npm", "run", "start"]
     container_name: ng-rolodex
     volumes:
       - ".:/app/:rw"
