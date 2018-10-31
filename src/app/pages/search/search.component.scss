@@ -1,0 +1,36 @@
+#searchDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+#searchIcon {
+  margin-top: 1.5vh;
+  height: 8vh;
+  width: auto;  
+}
+
+#searchBar {
+  border: none;
+  border-bottom: 0.2vh solid #CD0016;
+  outline: none;
+  width: 40vw;
+  height: 7.5vh;
+  margin-top: 1.5vh;
+  font-size: 7vh;
+  color: #CD0016;
+}
+
+::placeholder {
+  color: #CD0016;
+}
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+  -webkit-text-fill-color: #CD0016;
+}
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: /*your box-shadow*/0 0 0 50px white inset;
+  -webkit-text-fill-color: #CD0016;
+}
