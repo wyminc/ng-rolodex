@@ -13,6 +13,8 @@ exports.up = function (knex, Promise) {
     table.string('twitter').nullable();
     table.string('instagram').nullable();
     table.string('github').nullable();
+    table.integer('created_by').unsigned().notNullable();
+    table.foreign('created_by').references('id').inTable('users');
   })
 }
 

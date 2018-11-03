@@ -5,10 +5,8 @@ const bodyParser = require('body-parser');
 // const session = require('express-session');
 const knex = require('./knex/knex.js');
 
-// const cards = require('./knex/models/cards.js');
-// const priorities = require('./knex/models/priorities.js');
-// const statuses = require('./knex/models/statuses.js');
-// const users = require('./knex/models/users.js');
+const contacts = require('./knex/models/contacts.js');
+const users = require('./knex/models/users.js');
 const cors = require('cors');
 // const RedisStore = require('connect-redis')(session);
 // const passport = require('passport');
@@ -33,6 +31,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.engine('.hbs', exphbs({ defaultLayout: 'layout', extname: '.hbs' }));
 // app.set('view engine', '.hbs');
 
+app.get("/all", (req, res) => {
+  contacts
+    .fetchAll({ withRelated: ["created_by"] })
+    .then(results => {
+      res.json(results);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    })
+})
+
+app.post("/search", (req, res) => {
+  const info = req.body;
+  const name = (info.name).toLowerCase();
+
+  contacts
+    .query(function (qb) {
+      qb.whereRaw(`LOWER(name) LIKE ?`, [`%${name}%`])
+    })
+    .fetchAll({ withRelated: ["created_by"] })
+    .then(results => {
+      res.json(results);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    })
+})
 
 app.get('*', (req, res) => {
   res.json('404 error, this is the last item before app.listen on the server.js file');
