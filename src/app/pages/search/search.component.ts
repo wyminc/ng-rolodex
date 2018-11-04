@@ -23,26 +23,34 @@ export class SearchComponent implements OnInit {
     })
   }
 
-  search(event) {
+  search() {
     this.contacts = this.backend.contacts;
-    this.searchString += event.key;
-    console.log(this.searchString, "WUTISTHIS");
-    // this.backend.searchContact(this.searchString)
-    // .then((data) => {
-    //   console.log(data);
-    //   this.contacts = data;
-    // })
+    this.backend.searchContact(this.searchString)
+    .then((data) => {
+      this.searchString = "";
+      console.log(data);
+      this.contacts = data;
+    })
   }
 
-  keydown() {
-    clearTimeout(this.timer)
-  }
+  // keydown() {
+  //   clearTimeout()
+  // }
 
   keyup(event: any) {
-    this.timer = setTimeout(function() {
-      this.search(event)
-    }, 1500)
-    this.timer();
+    // setTimeout(function() {
+    //   // this.searchString += event.key;
+    //   console.log(event, "WUTISTHIS");
+    // }, 1500)
+
+    if (event.keyCode === 13) {
+      return this.searchString
+    } else if (event.keyCode === 8) {
+      this.searchString = this.searchString.substr(0, this.searchString.length-1)
+    } else {
+      this.searchString += event.key;
+      console.log(this.searchString, "WUTISTHIS");
+    }
   }
 
   constructor(private backend: BackendService) {}

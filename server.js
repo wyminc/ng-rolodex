@@ -45,8 +45,9 @@ app.get("/all", (req, res) => {
     })
 })
 
-app.post("/search/:name", (req, res) => {
+app.get("/search/:name", (req, res) => {
   const { name } = req.params
+  console.log(name, "WUT")
   const info = name.toLowerCase();
 
   contacts
