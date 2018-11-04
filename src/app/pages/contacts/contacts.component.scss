@@ -1,0 +1,19 @@
+// .input{
+//   border: none;
+//   outline: none;
+// }
+
+#contactsContainer{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.contacts{
+  width: 30%;
+  border: 1px solid #CD0016;
+  margin-top: 3%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+
+

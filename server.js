@@ -33,6 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/all", (req, res) => {
   contacts
+    .forge()
+    .orderBy('name', 'asc')
     .fetchAll({ withRelated: ["created_by"] })
     .then(results => {
       res.json(results);
@@ -43,13 +45,13 @@ app.get("/all", (req, res) => {
     })
 })
 
-app.post("/search", (req, res) => {
-  const info = req.body;
-  const name = (info.name).toLowerCase();
+app.post("/search/:name", (req, res) => {
+  const { name } = req.params
+  const info = name.toLowerCase();
 
   contacts
     .query(function (qb) {
-      qb.whereRaw(`LOWER(name) LIKE ?`, [`%${name}%`])
+      qb.whereRaw(`LOWER(name) LIKE ?`, [`%${info}%`])
     })
     .fetchAll({ withRelated: ["created_by"] })
     .then(results => {

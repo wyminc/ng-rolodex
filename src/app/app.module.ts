@@ -5,18 +5,18 @@ import { HttpClientModule } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HeaderComponent } from './shared/header/header.component';
 
-// import { BackendService } from "./services/backend.service";
+import { BackendService } from "./services/backend.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
+    ContactsComponent,
     AboutComponent,
     HomeComponent,
     SearchComponent,
@@ -28,7 +28,9 @@ import { HeaderComponent } from './shared/header/header.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    BackendService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

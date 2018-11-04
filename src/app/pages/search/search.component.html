@@ -1,4 +1,13 @@
-<div id="searchDiv">
-  <img src="/assets/search-icon.png" alt="" id="searchIcon">
-  <input type="search" id="searchBar" placeholder="Search by Name" name="name">
+<div id="searchContainer">
+  <div id="searchDiv">
+    <img src="/assets/search-icon.png" alt="" id="searchIcon">
+    <input type="search" id="searchBar" placeholder="Search by Name" name="name" (keyup)="keyup($event)">
+  </div>
+  <button id="allButton" (click)="showAll()">&dArr;</button>
+</div>
+
+<div id="contactsContainer">
+    <div *ngFor="let contact of contacts" class="contacts">
+        {{contact.name}}
+      </div>
 </div>

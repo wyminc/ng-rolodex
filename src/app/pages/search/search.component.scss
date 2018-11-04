@@ -1,3 +1,9 @@
+#searchContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 #searchDiv {
   display: flex;
   justify-content: center;
@@ -33,4 +39,32 @@ input:-webkit-autofill {
 input:-webkit-autofill:focus {
   -webkit-box-shadow: /*your box-shadow*/0 0 0 50px white inset;
   -webkit-text-fill-color: #CD0016;
+}
+
+#allButton{
+  border: none;
+  background: none;
+  outline: none;
+  margin-top: 2%;
+  margin-left: 1.5%;
+  font-size: 5vw;
+  color: #CD0016;
+  border: 1px solid #CD0016;
+  border-radius: 20%;
+}
+
+#contactsContainer{
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 2%;
+}
+
+.contacts{
+  width: 30%;
+  text-align: center;
+  // border: 1px solid #CD0016;
+  color: #CD0016;
+  margin-top: 3%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
 }
